@@ -1,0 +1,60 @@
+<div class="container my-4" *ngIf="plan">
+  <div class="card shadow-lg p-4">
+    
+    <h2 class="text-primary fw-bold mb-3">
+      <i class="bi bi-shield-check"></i> {{plan.planName}}
+    </h2>
+    <p class="text-muted">{{plan.description}}</p>
+
+    <hr>
+
+    <div class="row mt-3">
+      <div class="col-md-6 mb-3">
+        <div class="info-box p-3 rounded border">
+          <h6 class="fw-bold mb-1"><i class="bi bi-tag-fill text-primary"></i> Type</h6>
+          <span class="text-dark">{{plan.type}}</span>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <div class="info-box p-3 rounded border">
+          <h6 class="fw-bold mb-1"><i class="bi bi-cash-stack text-success"></i> Base Premium</h6>
+          <span class="fw-bold text-success fs-5">₹{{plan.baseAmt}}</span>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <div class="info-box p-3 rounded border">
+          <h6 class="fw-bold mb-1"><i class="bi bi-hospital text-danger"></i> Coverage</h6>
+          <span class="fw-bold text-danger fs-5">₹{{plan.coverage}}</span>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <div class="info-box p-3 rounded border">
+          <h6 class="fw-bold mb-1"><i class="bi bi-calendar-check text-primary"></i> Validity</h6>
+          <span class="text-dark">{{plan.validity}} Years</span>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="d-flex flex-column gap-2 mt-4">
+
+      <button class="btn btn-success btn-lg w-100" (click)="buy()">
+        <i class="bi bi-bag-check"></i> Buy this Plan
+      </button>
+
+      <button class="btn btn-outline-primary w-100" routerLink="/plans">
+        <i class="bi bi-arrow-left"></i> Back to Plans
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!plan" class="text-center my-5 text-muted">
+  <div class="spinner-border text-primary"></div>
+  <p>Loading plan details...</p>
+</div>

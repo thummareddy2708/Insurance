@@ -1,0 +1,70 @@
+{
+  "plans": [
+    {
+      "id": "1",
+      "planName": "Care Life Plan",
+      "type": "Vehicle Insurance",
+      "baseAmt": 2500,
+      "validity": 15,
+      "coverage": 500000,
+      "description": "The Care Life Plan safeguards you from unforeseen circumstances by providing instant coverage with no waiting period. Emergency services such as immediate ambulance, specialist  consultation and complete assistance are its major features."
+    },
+    {
+      "id": "2",
+      "planName": "Good Health Plan",
+      "type": "Health Insurance",
+      "baseAmt": 2000,
+      "validity": 30,
+      "coverage": 500000,
+      "description": "The Good Health Plan is our best-selling plan. Facilities like Air Ambulance and Buy Now  and Pay Later options to make it a stand out in the industry.”,"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "name": "Justin",
+      "city": "Chennai",
+      "phone": "2780808989",
+      "email": "hello@gmail.com",
+      "age": "35",
+      " planId": 2,
+      "planName": "Good Health Plan",
+      "validity": 30,
+      "paymentMode": "credit card",
+      "cardNumber": "7890-3223-7778",
+      "premiumAmt": 2500,
+      "paymentFreq": "yearly"
+    },
+    {
+      "id": "2",
+      "name": "Ravi Kumar",
+      "city": "Faridabad",
+      "phone": "+919899999990",
+      "email": "test@gmail.com",
+      "age": 22,
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "validity": "2023-12-11",
+      "paymentMode": "Credit Card",
+      "cardNumber": "1110-1212-2394",
+      "premiumAmt": 2500,
+      "paymentFreq": "Half Yearly"
+    },
+    {
+      "id": "a0d5",
+      "name": "Akshata",
+      "city": "Mumbai",
+      "phone": "1234567895",
+      "email": "aka@gmail.com",
+      "age": 18,
+      "planId": "1",
+      "planName": "Care Life Plan",
+      "validity": 15,
+      "paymentMode": "Credit Card",
+      "cardNumber": "**** **** **** 4444",
+      "premiumAmt": 2500,
+      "paymentFreq": "Yearly",
+      "paymentDate": "2025-11-04T12:32:35.447Z"
+    }
+  ]
+}

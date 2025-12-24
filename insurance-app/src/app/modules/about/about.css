@@ -1,0 +1,85 @@
+/* Hero */
+.about-hero {
+    background: linear-gradient(120deg, #0d6efd, #1255a5);
+    padding: 90px 20px;
+    text-align: center;
+    color: #fff;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  
+  .about-hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+  }
+  
+  /* About main content */
+  .about-content {
+    padding: 60px 0;
+  }
+  
+  .section-heading {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .about-content p.lead {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .list-icons {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .list-icons li {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  
+  .about-img {
+    width: 80%;
+    animation: float 3s infinite ease-in-out;
+  }
+  
+  /* Values */
+  .values-section {
+    background: #f6faff;
+    padding: 60px 0;
+  }
+  
+  .value-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  }
+  
+  .value-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .value-card img {
+    width: 65px;
+    margin-bottom: 12px;
+  }
+  
+  /* CTA */
+  .about-cta {
+    background: #0d6efd;
+    color: #fff;
+    padding: 60px 30px;
+    border-radius: 12px;
+    margin: 60px;
+  }
+  
+  /* Float animation */
+  @keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  

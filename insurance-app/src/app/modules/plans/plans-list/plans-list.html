@@ -1,0 +1,34 @@
+<h2 class="text-center my-4 fw-bold text-primary">Insurance Plans</h2>
+<p class="text-center mb-4 text-muted">
+  Choose the best insurance plan tailored for your needs & future security.
+</p>
+
+<div class="row g-4">
+  <div class="col-md-4" *ngFor="let p of plans">
+    <div class="plan-card shadow-sm p-3 bg-white rounded">
+      
+      <div class="d-flex justify-content-between">
+        <h5 class="fw-bold text-primary">{{ p.planName }}</h5>
+        <span class="badge bg-success px-3 py-2">₹ {{ p.baseAmt }}</span>
+      </div>
+      
+      <p class="text-muted small mb-2"><strong>Type:</strong> {{ p.type }}</p>
+
+      <ul class="plan-features mb-3">
+        <li><i class="bi bi-shield-check"></i> Coverage: ₹ {{ p.coverage }}</li>
+        <li><i class="bi bi-calendar2-check"></i> Validity: {{ p.validity }} Years</li>
+        <li><i class="bi bi-person-heart"></i> Age: 18-60 eligible</li>
+        <li><i class="bi bi-check-circle"></i> Easy monthly installments</li>
+      </ul>
+
+      <p class="text-muted small">{{ p.description | slice:0:90 }}{{ p.description.length > 90 ? '...' : '' }}</p>
+
+      <div class="d-grid gap-2 mt-3">
+        <a class="btn btn-primary" (click)="viewPlan(p.id)">
+          <i class="bi bi-info-circle"></i> View Details
+        </a>
+      
+      </div>
+    </div>
+  </div>
+</div>

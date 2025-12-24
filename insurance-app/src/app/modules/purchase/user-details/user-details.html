@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+          <h4 class="mb-0">Customer Details</h4>
+        </div>
+
+        <div class="card-body">
+
+          <form [formGroup]="form">
+            
+            <!-- Name -->
+            <div class="mb-3">
+              <label>Name</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Enter full name">
+              <small class="text-danger" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+                Name is required (min 3 characters)
+              </small>
+            </div>
+
+            <!-- City -->
+            <div class="mb-3">
+              <label>City</label>
+              <input type="text" class="form-control" formControlName="city" placeholder="Enter city">
+              <small class="text-danger" *ngIf="form.get('city')?.touched && form.get('city')?.invalid">
+                City is required
+              </small>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="example@gmail.com">
+              <small class="text-danger" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+                Enter a valid email address
+              </small>
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-3">
+              <label>Phone</label>
+              <input type="text" class="form-control" formControlName="phone" placeholder="10-digit mobile number" maxlength="10">
+              <small class="text-danger" *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid">
+                Enter valid phone number
+              </small>
+            </div>
+
+            <!-- Age -->
+            <div class="mb-3">
+              <label>Age</label>
+              <input type="number" class="form-control" formControlName="age" placeholder="Enter age (18-80)">
+              <small class="text-danger" *ngIf="form.get('age')?.touched && form.get('age')?.invalid">
+                Age must be between 18 and 80
+              </small>
+            </div>
+
+            <!-- Buttons -->
+            <div class="text-center mt-3">
+              <button type="button" class="btn btn-primary w-100"
+              [disabled]="form.invalid"
+              (click)="next()">
+        Next &rarr;
+      </button>
+      
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

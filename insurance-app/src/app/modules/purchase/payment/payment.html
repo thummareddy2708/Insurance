@@ -1,0 +1,77 @@
+<div class="container mt-4">
+
+  <!-- ✅ Success Screen -->
+  <div *ngIf="success" class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow border-0 text-center p-4">
+        <h2 class="text-success fw-bold">Payment Successful ✅</h2>
+        <p>Your policy has been activated successfully!</p>
+
+        <h5 class="fw-bold mt-3">{{ plan?.planName }}</h5>
+        <p class="text-muted">Premium Paid: <span class="fw-bold text-dark">₹{{ plan?.baseAmt }}</span></p>
+
+        <button routerLink="/" class="btn btn-primary mt-3 w-100">Go to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Payment Form -->
+  <div *ngIf="!success" class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card shadow border-0">
+        <div class="card-header bg-success text-white text-center">
+          <h4 class="mb-0">Payment</h4>
+        </div>
+
+        <div class="card-body">
+
+          <!-- Plan Summary -->
+          <div class="mb-3 text-center">
+            <h5 class="fw-bold">{{ plan?.planName }}</h5>
+            <p class="text-muted">Premium Amount: 
+              <span class="fw-bold text-dark">₹{{ plan?.baseAmt }}</span>
+            </p>
+          </div>
+
+          <!-- Payment Form -->
+          <form [formGroup]="form" (ngSubmit)="pay()">
+
+            <!-- Card Name -->
+            <div class="mb-3">
+              <label class="form-label">Card Holder Name</label>
+              <input type="text" class="form-control" placeholder="Name on Card" formControlName="cardName">
+              <small class="text-danger" *ngIf="submitted && form.get('cardName')?.invalid">Enter valid name</small>
+            </div>
+
+            <!-- Card Number -->
+            <div class="mb-3">
+              <label class="form-label">Card Number</label>
+              <input type="text" class="form-control" placeholder="1111 2222 3333 4444" formControlName="cardNumber">
+              <small class="text-danger" *ngIf="submitted && form.get('cardNumber')?.invalid">Enter 16-digit card number</small>
+            </div>
+
+            <!-- Expiry + CVV row -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Expiry</label>
+                <input type="text" class="form-control" placeholder="MM/YY" formControlName="expiry">
+                <small class="text-danger" *ngIf="submitted && form.get('expiry')?.invalid">Enter valid expiry</small>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">CVV</label>
+                <input type="password" maxlength="3" class="form-control" placeholder="***" formControlName="cvv">
+                <small class="text-danger" *ngIf="submitted && form.get('cvv')?.invalid">Enter 3-digit CVV</small>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mt-2">Pay Securely</button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
